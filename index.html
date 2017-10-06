@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Handlebars</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style/index.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	
+    <div class="container-fluid">
+    	<h3>My Pets</h3>
+    	<div id="animal-info" class="container"></div>
+    </div>
+	
+	<script id="petsTemplate" type="text/x-handlebars-template">
+		{{#each pets}}
+			<div class="col-md-12 main animated zoomIn">
+				<div class="col-md-4">
+					<img class="img" src="{{photo}}">
+				</div>
+				<div class="col-md-8">
+					<h4>{{name}}<span class="label" style="">{{species}}</span></h4>
+					
+					<p>Age: {{calAge birthYear}}</p>
+
+					{{#if favFoods}}
+					<table class="table">
+						<tr>
+							<th>
+								Favourite Food
+							</th>
+						</tr>
+						{{#each favFoods}}
+						    <tr><td>{{{this}}}</td></tr>
+						{{/each}}
+					</table>
+					{{else}}
+					 <table class="table">
+						<tr>
+							<th>
+								Favourite Food
+							</th>
+						</tr>
+						
+						    <tr><td>NA</td></tr>
+						
+					</table>
+					{{/if}}
+					
+				</div>
+			</div>
+		{{/each}}
+	</script>
+
+    <script type="text/javascript" src="js/handlebars-v4.0.10.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	
+</body>
+</html>
